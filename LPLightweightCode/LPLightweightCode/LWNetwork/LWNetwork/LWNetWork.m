@@ -38,6 +38,19 @@ typedef void (^LWURLSessionProgressHandler)(NSURLSessionTask *task, CGFloat prog
     return self;
 }
 
+- (NSURL *)cacheFileUrlForFileUrl:(NSURL *)url
+{
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    cachePath = [cachePath stringByAppendingPathComponent:@"LPLWDownloadCache"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:cachePath])
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:cachePath withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    
+    NSURL *fileCacheUrl = [NSURL fileURLWithPath:[cachePath stringByAppendingPathComponent:url.path.lastPathComponent]];
+    
+    return fileCacheUrl;
+}
 
 - (void)URLSession:(__unused NSURLSession *)session
               task:(NSURLSessionTask *)task
@@ -97,6 +110,13 @@ typedef void (^LWURLSessionProgressHandler)(NSURLSessionTask *task, CGFloat prog
     didFinishDownloadingToURL:(NSURL *)location
 {
     self.downloadLocationUrl = location;
+    
+    NSURL *fileURL = [self cacheFileUrlForFileUrl:location];
+    if (fileURL) {
+        self.downloadLocationUrl = fileURL;
+        NSError *error = nil;
+        [[NSFileManager defaultManager] moveItemAtURL:location toURL:fileURL error:&error];
+    }
     
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
