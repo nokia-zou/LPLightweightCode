@@ -17,6 +17,7 @@
 		F878BA4D1E979C5600A35EEC /* NetWorkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878BA4C1E979C5600A35EEC /* NetWorkTableViewController.m */; };
 		F878BA501E979ED400A35EEC /* NetWorkDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878BA4F1E979ED400A35EEC /* NetWorkDownloadViewController.m */; };
 		F878BA531E97AB8000A35EEC /* NetWorkGetJsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F878BA521E97AB8000A35EEC /* NetWorkGetJsonViewController.m */; };
+		F878BA571E98E62E00A35EEC /* LWNetWorkDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F878BA561E98E62E00A35EEC /* LWNetWorkDataParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		F878BA4F1E979ED400A35EEC /* NetWorkDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkDownloadViewController.m; sourceTree = "<group>"; };
 		F878BA511E97AB8000A35EEC /* NetWorkGetJsonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkGetJsonViewController.h; sourceTree = "<group>"; };
 		F878BA521E97AB8000A35EEC /* NetWorkGetJsonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkGetJsonViewController.m; sourceTree = "<group>"; };
+		F878BA551E98E62E00A35EEC /* LWNetWorkDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWNetWorkDataParser.h; sourceTree = "<group>"; };
+		F878BA561E98E62E00A35EEC /* LWNetWorkDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWNetWorkDataParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				F878BA481E979C0200A35EEC /* LWNetWork.h */,
 				F878BA491E979C0200A35EEC /* LWNetWork.m */,
+				F878BA551E98E62E00A35EEC /* LWNetWorkDataParser.h */,
+				F878BA561E98E62E00A35EEC /* LWNetWorkDataParser.m */,
 			);
 			path = LWNetwork;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				F878BA501E979ED400A35EEC /* NetWorkDownloadViewController.m in Sources */,
 				F878BA351E9796D200A35EEC /* ViewController.m in Sources */,
 				F878BA321E9796D200A35EEC /* AppDelegate.m in Sources */,
+				F878BA571E98E62E00A35EEC /* LWNetWorkDataParser.m in Sources */,
 				F878BA2F1E9796D200A35EEC /* main.m in Sources */,
 				F878BA4A1E979C0200A35EEC /* LWNetWork.m in Sources */,
 				F878BA531E97AB8000A35EEC /* NetWorkGetJsonViewController.m in Sources */,

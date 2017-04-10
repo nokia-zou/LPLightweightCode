@@ -76,16 +76,8 @@ typedef void (^LWURLSessionProgressHandler)(NSURLSessionTask *task, CGFloat prog
             }
             else if ([task isKindOfClass:[NSURLSessionDataTask class]])
             {
-                if ([weakSelf.jsonTypeSet containsObject:task.response.MIMEType])
-                {
-                    data = [NSJSONSerialization JSONObjectWithData:self.mutableData
-                                                           options:NSJSONReadingMutableLeaves
-                                                             error:nil];
-                }
-                else if ([weakSelf.imageTypeSet containsObject:task.response.MIMEType])
-                {
-                    data = [UIImage imageWithData:self.mutableData];
-                }
+                data = [LWNetWorkDataParseManager parseData:self.mutableData
+                                                forMIMEType:task.response.MIMEType];
             }
             
             if (weakSelf.completionHandler)
