@@ -18,8 +18,6 @@ typedef void (^LWURLSessionProgressHandler)(NSURLSessionTask *task, CGFloat prog
 @property (nonatomic, strong) NSURL *downloadLocationUrl;
 @property (nonatomic, copy) LWURLSessionCompletionHandler completionHandler;
 @property (nonatomic, copy) LWURLSessionProgressHandler progressHandler;
-@property (nonatomic, strong) NSSet *jsonTypeSet;
-@property (nonatomic, strong) NSSet *imageTypeSet;
 
 @end
 
@@ -31,8 +29,6 @@ typedef void (^LWURLSessionProgressHandler)(NSURLSessionTask *task, CGFloat prog
     if (self = [super init])
     {
         self.mutableData = [NSMutableData data];
-        self.jsonTypeSet = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
-        self.imageTypeSet = [NSSet setWithObjects:@"image/tiff", @"image/jpeg", @"image/gif", @"image/png", @"image/ico", @"image/x-icon", @"image/bmp", @"image/x-bmp", @"image/x-xbitmap", @"image/x-win-bitmap", nil];
     }
     
     return self;
